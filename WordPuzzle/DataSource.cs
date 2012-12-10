@@ -6,8 +6,10 @@ using MongoDB.Driver;
 
 namespace WordPuzzle
 {
-    public class DataSource
+    public interface DataSource
     {
-        public static MongoClient client = new MongoClient("mongodb://crazywords.cloudapp.net");
+        public IEnumerable<Item> QueryAll(Char hintChar, int index);
+
+        //public IEnumerable<Item> QueryTopN(Char hintChar, int index
     }
 }
